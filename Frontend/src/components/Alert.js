@@ -1,18 +1,21 @@
-import React from 'react'
+import "./styles.css";
+import {Route , Routes} from "react-router-dom";
+import Home from "../src/routes/Home";
+import About from "./routes/About";
+import Classes from "./routes/Classes";
+import Contact from "./routes/Contact"
 
-function Alert(props) {
-    const captali = (word) => {
-        if(word === "danger")word = "error";
-        const lower = word.toLowerCase();
-        return lower.charAt(0).toUpperCase() + lower.slice(1);
-    }
+export default function App() {
   return (
-    <div style={{height:'50 px'}}>
-      {props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-          <strong>{captali(props.alert.type)}</strong>: {props.alert.msg}
-      </div>}
+    <div className="App">
+     <Routes>
+       <Route  path="/"  element={<Home />} />
+       <Route  path="/about"  element={<About />} />
+       <Route  path="/classes"  element={<Classes/>} />
+       <Route  path="/contact"  element={<Contact/>} />
+     </Routes> 
+      
+    
     </div>
-  )
+  );
 }
-
-export default Alert
