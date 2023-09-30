@@ -44,7 +44,7 @@ const Login = async (req,res) => {
             user = await User.findOne({username:username});
         }
 
-        if(!user){
+        if(!user){   
             return res.status(404).json({success:false, message:"Please Login with correct credential"});
         }
         
