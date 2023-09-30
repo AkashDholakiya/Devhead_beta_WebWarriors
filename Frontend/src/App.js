@@ -1,35 +1,21 @@
-import './App.css';
-import React,{useState} from 'react';
-import Alert from './components/Alert';
-import Home from './components/home';
-import {
-  Router,
-  Routes,
-  Route,
-}from 'react-router-dom';
+import "./styles.css";
+import {Route , Routes} from "react-router-dom";
+import Home from "../src/routes/Home";
+import About from "./routes/About";
+import Classes from "./routes/Classes";
+import Contact from "./routes/Contact"
 
-function App() {
-  const [alert,setAlert] = useState(null);
-  const showAlert = (message,type) => {
-    setAlert({
-      msg : message,
-      type : type
-    })
-    setTimeout(() => {
-        setAlert(null);
-    }, 2000);
-  }
+export default function App() {
   return (
-    <div className="App">  
-      <Router>
-        <Alert alert={alert}/>
-        <Routes>
-          <Route path="/" element={<Home alert={showAlert}/>} />
-      </Routes>
-      </Router>
-      <h1>FitPal</h1>
+    <div className="App">
+     <Routes>
+       <Route  path="/"  element={<Home />} />
+       <Route  path="/about"  element={<About />} />
+       <Route  path="/classes"  element={<Classes/>} />
+       <Route  path="/contact"  element={<Contact/>} />
+     </Routes> 
+      
+    
     </div>
   );
 }
-
-export default App;
