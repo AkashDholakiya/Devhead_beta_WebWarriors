@@ -4,7 +4,7 @@ import {MenuItems} from "./MenuItems";
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router-dom"
 
-const  Navbar = () => {
+const  Navbar = (props) => {
   const navigate = useNavigate();
   const [clicked, setClicked] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(false);
@@ -13,8 +13,9 @@ const  Navbar = () => {
   }
   const Logout = () => {
     localStorage.removeItem('token');
+    props.showAlert("Logged out Successfully","success")
     setIsLoggedin(false);
-    navigate('/');
+    navigate('/Login');
   }
   useEffect(() => {
     const token = localStorage.getItem('token');

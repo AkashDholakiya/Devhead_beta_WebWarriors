@@ -1,4 +1,5 @@
 import "../style/HeroStyles.css";
+import { Link } from "react-router-dom";
 
 function Hero(props){
   return(
@@ -9,9 +10,7 @@ function Hero(props){
         <h2>{props.title}</h2>
         <h1>{props.text}</h1>
         <h3>{props.text2}</h3>
-        <a href={props.url} className={props.btnClass}>
-          {props.buttonText}
-        </a>
+        {!localStorage.getItem('token') && <Link to={props.url} className={props.btnClass}>{props.buttonText}</Link>}
       </div>
     </div>
     </>
