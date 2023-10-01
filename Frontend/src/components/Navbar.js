@@ -40,7 +40,6 @@ const  Navbar = (props) => {
            </li>
            )
          })}
-         {!isLoggedin && <button onClick={() => navigate('/Login')}>Login</button>}
          {!isLoggedin && <button onClick={() => navigate('/Signup')}>Sign Up</button>}
           {isLoggedin && <button onClick={Logout} >Logout</button>}
          </ul>
