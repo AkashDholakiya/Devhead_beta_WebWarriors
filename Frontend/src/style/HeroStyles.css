@@ -1,105 +1,121 @@
 .hero{
-    width:100%;
-    height:100vh;
-    position:relative;
-    text-align: center;
-  }
-  img{
-    width:100%;
-    height:100%;
-    object-fit: cover;
-  }
-  .hero-text{
-    position:absolute;
-    display:flex;
-    flex-direction:column;
-    top:55%;
-    left:50%;
-    transform:translate(-50% , -50%);
-    width:50%;
-    justify-content: center;
-    align-items: center;
-  }
+  width:100%;
+  height:100vh;
+  position:relative;
+  text-align: center;
+}
+.hero-mid{
+  width:100%;
+  height:55vh;
+  position:relative;
+}
+.hero-mid h1{
+  padding-top:1.5rem !important;
+  text-align: center;
+}
+img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.hero-text {
+  color: #fff;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  overflow: hidden; 
+}
+
+.hero-text h1{
+  color:#fff;
+  text-align: center;
+  font-size:4rem;
+  font-weight:800;
+  background:white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color:transparent;
+}
+.hero-text h3{
+  color: #fff;
+  font-size:1rem;
+  font-weight:800;
+  background:white;
+  
+  font-size:1rem;
+  font-weight:800;
+   -webkit-background-clip: text;
+  -webkit-text-fill-color:transparent;
+}
+.hero-text h2{
+  color: #fff;
+  font-size:1rem;
+  font-weight:800;
+  background:white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+  font-size:1rem;
+  font-weight:800;
+   -webkit-background-clip: text;
+  -webkit-text-fill-color:transparent;
+}
+.hero-text .show{
+  width:fit-content;
+  display:flex;
+  align-self: center;
+  text-decoration:none;
+  background:#fff ;
+  margin-top:1.5rem;
+  padding: 0.5rem  1.5rem 0.5rem  1.5rem;
+  border-radius: 6px;
+  font-size:1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color:blue;
+}
+.myform{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+.myform input{
+    width: 460px;
+}
+.myform .link{
+  font-weight: 800;
+  cursor: pointer;
+}
+.myform .link:hover{
+  text-decoration: underline;
+}
+
+.alert{
+  display: block;
+  width: 99.1%;
+  transform: translateY(-99%);
+  position: absolute;
+}
+
+@media screen and (max-width:550px){
   .hero-text h1{
-    font-size:4rem;
-    font-weight:800;
-    text-align: center;
-    background:white;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent;
-  } 
+    padding:10px 20px;
+  }
   .hero-text h2{
-    font-size:2rem;
-    font-weight:800;
-    background:white;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent;
+    font-size:1.1rem;
+    padding:0 0 2rem 0;
   }
-  .hero-text h3{
-    font-size:1rem;
-    font-weight:800;
-    background:white;
-      -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent;
-  }
-  .hero-text .link{
-    cursor: pointer;
-    font-weight:800;
-    color: white;
-    text-decoration: none;
-  }
-  .hero-text .link:hover{
-    text-decoration:underline;
+  .hero-text2 h3{
+    font-size:0.1em;
   }
   .hero-text .show{
-    width:fit-content;
-    display:flex;
-    align-items: center;
-    text-decoration:none;
-    background:#fff ;
-    margin-top:1.5rem;
-    padding: 0.5rem  1.5rem 0.5rem  1.5rem;
-    border-radius: 6px;
+    margin-top: 3rem;
+    padding:0.6rem 1.1rem;
+    border-radius:6px;
     font-size:1rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color:blue;
+    background:white;
   }
-  .hero-text .show:hover{
-    background:blue;
-    color:white;
-    transition: all 0.5s ease-in-out;
-  }
-  .myform{
-    display: block;
-    width: 70%;
-  }
-  .alert{
-    display: block;
-    align-items: center;
-    width: 98vw;
-    position: absolute;
-    transform: translateY(-99%);
-  }
-  @media screen and (max-width:550px){
-    .hero-text h1{
-      padding:10px 20px;
-    }
-    .hero-text h2{
-      font-size:1.1rem;
-      padding:0 0 2rem 0;
-    }
-    .hero-text2 h3{
-      font-size:0.3em;
-    }
-    .hero-text .show{
-      margin-top: 3rem;
-      padding:0.6rem 1.1rem;
-      border-radius:6px;
-      font-size:1rem;
-      background:white;
-    }
-  }
-  
-  
-  
+}

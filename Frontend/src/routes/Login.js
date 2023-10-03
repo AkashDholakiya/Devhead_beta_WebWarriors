@@ -1,5 +1,6 @@
 import {React,useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+// import  "../style/login.css";
 import Navbar from '../components/Navbar';
 import '../style/HeroStyles.css'
 
@@ -37,7 +38,7 @@ const Login = (props) => {
                 <h1 >Login</h1>
                 <form className='myform' onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label htmlFor="username" className="form-label"><h3>Username/Email : </h3></label>
+                        <label htmlFor="username" className="form-label"><h3>Username: </h3></label>
                         <input type="name" className="form-control" value={val.username} onChange={HandleChange} id="username" name="username" aria-describedby="usernameHelp" />
                     </div>
                     <div className="mb-3">
@@ -49,6 +50,7 @@ const Login = (props) => {
                     </div>
                 </form>
             </div>
+
         </div>
   )
 }

@@ -31,10 +31,11 @@ function Classes(){
 
 
     const [currentpage,setcurrentpage] = useState(1);
-    const [ElePerPage,setElePerPage] = useState(20);
+    const [ElePerPage,setElePerPage] = useState(8);
 
     useEffect(() => {
-      const fethBodyPart = () => {
+      const fethBodyPart = async () => {
+        // cosnt bodyPartData = await fetchData("https://exercisedb.p.rapidapi.com/bodyparts",exerciseOptions); 
         const bodyPartData = Data2;  
         setBodyParts(['all', ...bodyPartData]);
       }
@@ -43,9 +44,10 @@ function Classes(){
       fethBodyPart();
     },[])
 
-    const handle = () => {
+    const handle = async () => {
       if(search){
-        const exereciseData  = Data1;
+        // const exereciseData  = await fetchData("https://exercisedb.p.rapidapi.com/exercises?limit=100",exerciseOptions);
+        const exereciseData = Data1;
         console.log(exereciseData);
 
         const searchedExercise = exereciseData.filter(
@@ -55,7 +57,7 @@ function Classes(){
           || item.bodyPart.toLowerCase().includes(search),
           )
           
-        console.log(searchedExercise);
+        // console.log(searchedExercise);
         setSearch("");
         setExercise(searchedExercise);
       }

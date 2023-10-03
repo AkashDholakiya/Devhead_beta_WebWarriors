@@ -1,7 +1,11 @@
 import Hero from "../components/Hero";
+
+import Footer from "../components/Footer"
+import Homeabout from '../components/Homeabout';
 import Navbar from "../components/Navbar";
 
 function Home(props){
+
   return(
     <>
     <Navbar showAlert={props.showAlert}/>
@@ -11,10 +15,13 @@ function Home(props){
     title="BUILD UP YOUR"
     text="STRENGTH"
     text2="Build Your Body and Fitness with Proffesional Touch"
-    buttonText="Join Us"
+    buttonText={`${localStorage.getItem('token') ? 'Go to Classes' : 'Join Us'}`}
     url ="/Signup"
     btnClass="show"
     />
+    <Homeabout/>
+  
+    <Footer/>
     </>
   );
 }

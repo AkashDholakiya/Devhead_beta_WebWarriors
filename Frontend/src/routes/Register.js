@@ -1,6 +1,7 @@
 import {React,useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import '../style/HeroStyles.css'
 
 const Register = (props) => {
     const navigate = useNavigate();
@@ -29,12 +30,14 @@ const Register = (props) => {
         setVal({...val,[e.target.name]:e.target.value})
     }
   return (
+                
     <div>
         <Navbar />
         <img className='hero' src="https://images.unsplash.com/photo-1606335544665-96055053b5c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fitness Img"/>
         <div className="hero-text">
             <h1>Signup</h1>
             <form className='myform' onSubmit={handleSubmit}>
+
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label"><h3>Username :</h3></label>
                     <input type="username" className="form-control" value={val.username} onChange={HandleChange} id="username" name="username" aria-describedby="usernameHelp" />
@@ -52,13 +55,12 @@ const Register = (props) => {
                     <button type="submit" className="show my-2">Submit</button>
                 </div>
                 <div className='my-2' style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <h3 className='mx-2'>Already Have an Account?</h3><p className='link'  onClick={() => {
-                        navigate('/Login')
-                    }} style={{marginTop:'7px'}}>Login</p>
+                    <h3 className='mx-2'>Already Have an Account?</h3><p className='link' onClick={() => {
+                    navigate('/Login')}} style={{marginTop:'7px'}}>Login</p>
                 </div>
             </form>
             </div>
-        </div>
+         </div>
   )
 } 
  
