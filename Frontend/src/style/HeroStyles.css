@@ -19,6 +19,7 @@
     height:100%;
     object-fit: cover;
   }
+
   .hero-text {
     position: absolute;
     display: flex;
@@ -30,14 +31,28 @@
     overflow: hidden; /* Add this line to hide the text initially */
 }
 
+=======
+  .hero-text{
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    top:55%;
+    left:50%;
+    transform:translate(-50% , -50%);
+    width:50%;
+    justify-content: center;
+    align-items: center;
+  }
+
   .hero-text h1{
     font-size:4rem;
     font-weight:800;
+    text-align: center;
     background:white;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
     -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;
-  }
+  } 
   .hero-text h2{
     font-size:2rem;
     font-weight:800;
@@ -49,10 +64,19 @@
       -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;
   }
+  .hero-text .link{
+    cursor: pointer;
+    font-weight:800;
+    color: white;
+    text-decoration: none;
+  }
+  .hero-text .link:hover{
+    text-decoration:underline;
+  }
   .hero-text .show{
     width:fit-content;
     display:flex;
-    align-self: center;
+    align-items: center;
     text-decoration:none;
     background:#fff ;
     margin-top:1.5rem;
@@ -63,7 +87,24 @@
     letter-spacing: 2px;
     color:blue;
   }
- 
+
+  .hero-text .show:hover{
+    background:blue;
+    color:white;
+    transition: all 0.5s ease-in-out;
+  }
+  .myform{
+    display: block;
+    width: 70%;
+  }
+  .alert{
+    display: block;
+    align-items: center;
+    width: 98vw;
+    position: absolute;
+    transform: translateY(-99%);
+  }
+
   @media screen and (max-width:550px){
     .hero-text h1{
       padding:10px 20px;
