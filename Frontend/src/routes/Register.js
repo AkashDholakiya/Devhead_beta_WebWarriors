@@ -1,5 +1,7 @@
 import {React,useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import  "../style/signup.css";
 import Navbar from '../components/Navbar';
 
 const Register = (props) => {
@@ -29,12 +31,18 @@ const Register = (props) => {
         setVal({...val,[e.target.name]:e.target.value})
     }
   return (
+
+    <div className='login-container'>
+            <h1 className='my-4'>Signup</h1>
+            <form onSubmit={handleSubmit}>
+=======
     <div>
         <Navbar />
         <img className='hero' src="https://images.unsplash.com/photo-1606335544665-96055053b5c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fitness Img"/>
         <div className="hero-text">
             <h1>Signup</h1>
             <form className='myform' onSubmit={handleSubmit}>
+>>>>>>> main
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label"><h3>Username :</h3></label>
                     <input type="username" className="form-control" value={val.username} onChange={HandleChange} id="username" name="username" aria-describedby="usernameHelp" />

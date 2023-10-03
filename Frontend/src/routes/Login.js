@@ -1,5 +1,8 @@
 import {React,useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+
+import  "../style/login.css";
+
 import Navbar from '../components/Navbar';
 import '../style/HeroStyles.css'
 
@@ -30,6 +33,22 @@ const Login = (props) => {
         setVal({...val,[e.target.name]:e.target.value})
     }
   return (
+
+    <div className='login-container'>
+            <h1 className='my-4'>Login</h1>
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label htmlFor="username" className="form-label">Username/Email : </label>
+                    <input type="name" className="form-control" value={val.username} onChange={HandleChange} id="username" name="username" aria-describedby="usernameHelp" />
+                        <div id="usernameHelp" className="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="password" className="form-label">Password</label>
+                    <input type="password" className="form-control" value={val.password} onChange={HandleChange} id="password"  name='password'/>
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+
       <div>
             <Navbar />
             <img className='hero' src="https://images.unsplash.com/photo-1606335544665-96055053b5c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fitness Img"/>
@@ -49,6 +68,7 @@ const Login = (props) => {
                     </div>
                 </form>
             </div>
+
         </div>
   )
 }

@@ -1,7 +1,11 @@
 import Hero from "../components/Hero";
+
+import Footer from "../components/Footer"
+import Homeabout from '../components/Homeabout';
 import Navbar from "../components/Navbar";
 
-function Home(props){
+function Home(){
+
   return(
     <>
     <Navbar showAlert={props.showAlert}/>
@@ -15,6 +19,9 @@ function Home(props){
     url ="/Signup"
     btnClass="show"
     />
+    <Homeabout/>
+  
+    <Footer/>
     </>
   );
 }
