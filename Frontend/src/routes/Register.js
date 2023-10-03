@@ -52,7 +52,7 @@ const Register = (props) => {
                     <input type="password" className="form-control" value={val.password} onChange={HandleChange} id="password"  name='password'/>
                 </div>
                 <div className="container">
-                    <button type="submit" className="show my-2">Submit</button>
+                    <button type="submit" className="show my-2">Signup</button>
                 </div>
                 <div className='my-2' style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                     <h3 className='mx-2'>Already Have an Account?</h3><p className='link' onClick={() => {

@@ -1,11 +1,11 @@
 import Hero from "../components/Hero";
-
 import Footer from "../components/Footer"
 import Homeabout from '../components/Homeabout';
 import Navbar from "../components/Navbar";
 
 function Home(props){
   const tag = localStorage.getItem('token') ? "Go to Dashboard" : "Join Us";
+  console.log(tag);
   return(
     <>
     <Navbar showAlert={props.showAlert}/>
@@ -21,7 +21,7 @@ function Home(props){
     />
     <Homeabout/>
     <Footer/>
-    {localStorage.getItem('token') && <zapier-interfaces-page-embed page-id='clnap55n3162340omhct3bh3h7' no-background='false' style={{width: "100%", height: "500px"}} />}
+
     </>
   );
 }

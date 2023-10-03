@@ -105,6 +105,14 @@ img{
   position: absolute;
 }
 
+.chatbot{
+  position: fixed;
+  z-index: 2000;
+  bottom: 12px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
+}
 @media screen and (max-width:550px){
   .hero-text h1{
     padding:10px 20px;
