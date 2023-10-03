@@ -15,8 +15,7 @@ const BodyPart = ({item,BodyPart,setBodyPart}) => {
       }}>
         <img src={Icon} alt="GymIcon" style={{width:'80px', height:'80px',margin:'40px 40px'}}/>
         <p>{item}</p>
-        </div>
-        
+        </div>  
     </div>
   )
 }

@@ -23,7 +23,6 @@ function Classes(){
       setScroll(false)
     }
     })
-    console.log(scroll);
 
     const [search,setSearch] = useState("");
     const [exercise,setExercise] = useState([]);
@@ -31,11 +30,16 @@ function Classes(){
     const [bodyParts,setBodyParts] = useState([]);
 
 
+    const [currentpage,setcurrentpage] = useState(1);
+    const [ElePerPage,setElePerPage] = useState(20);
+
     useEffect(() => {
       const fethBodyPart = () => {
-        const bodyPartData = Data2
+        const bodyPartData = Data2;  
         setBodyParts(['all', ...bodyPartData]);
       }
+      let randomData = Data1.sort(() => Math.random() - 0.5);
+      setExercise(randomData.slice(0, 100));
       fethBodyPart();
     },[])
 
@@ -56,6 +60,9 @@ function Classes(){
         setExercise(searchedExercise);
       }
     }
+    const indexofLastEle = currentpage * ElePerPage;
+    const indexofFirstEle = indexofLastEle - ElePerPage; 
+    const currentEle = exercise.slice(indexofFirstEle,indexofLastEle); 
     return(
       <div className="clink">
         {scroll && <i onClick={scrollup} className={`scroller fade-in-scroller fa-solid fa-arrow-up`}></i>}
@@ -69,7 +76,7 @@ function Classes(){
           </div>
 
           <Horizontalbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
-          <Exercises exercise={exercise} setExercise={setExercise} bodyPart={bodyPart}/>
+          <Exercises exercise={currentEle} setExercise={setExercise} bodyPart={bodyPart}/>
       </div>
     )
   }
