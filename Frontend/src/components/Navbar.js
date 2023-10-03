@@ -19,10 +19,12 @@ const  Navbar = (props) => {
   }
   useEffect(() => {
     const token = localStorage.getItem('token');
+    document.getElementById('2').style.display = localStorage.getItem('token') ? 'block' : 'none';
     if(token){
       setIsLoggedin(true);
     }
   },[])
+    
     return (
       <nav className="NavbarItems">
         <h1 className="navbar-logo">FitPal</h1>
@@ -33,11 +35,12 @@ const  Navbar = (props) => {
        <ul className={clicked ? "nav-menu active" : "nav-menu"}>
          {MenuItems.map((item,index)=>{
            return(
-           <li key={index}>
+           <li key={index} id={index}>
            <Link className ={item.cName} to={item.url}>
              <i className={item.icon}>
-               </i>{item.title}</Link>
+              </i>{item.title}</Link>
            </li>
+
            )
          })}
          {!isLoggedin && <button onClick={() => navigate('/Signup')}>Sign Up</button>}
