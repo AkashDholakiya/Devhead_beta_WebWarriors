@@ -1,5 +1,8 @@
 import Navbar from '../components/Navbar'
 import Hero from "../components/Hero";
+import Footer from "../components/Footer"
+import Homeabout from '../components/Homeabout';
+
 function Home(){
   return(
     <>
@@ -14,6 +17,9 @@ function Home(){
     url ="/"
     btnClass="show"
     />
+    <Homeabout/>
+  
+    <Footer/>
     </>
   );
 }

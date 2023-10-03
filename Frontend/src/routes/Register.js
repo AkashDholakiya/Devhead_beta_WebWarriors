@@ -1,5 +1,6 @@
 import {React,useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import  "../style/signup.css";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Register = () => {
         setVal({...val,[e.target.name]:e.target.value})
     }
   return (
-    <div className='container'>
+    <div className='login-container'>
             <h1 className='my-4'>Signup</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">

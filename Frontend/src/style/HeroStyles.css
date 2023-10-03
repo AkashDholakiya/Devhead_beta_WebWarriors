@@ -1,7 +1,17 @@
+
 .hero{
     width:100%;
     height:100vh;
     position:relative;
+    text-align: center;
+  }
+  .hero-mid{
+    width:100%;
+    height:55vh;
+    position:relative;
+  }
+  .hero-mid h1{
+    padding-top:1.5rem !important;
     text-align: center;
   }
   img{
@@ -9,19 +19,22 @@
     height:100%;
     object-fit: cover;
   }
-  .hero-text{
-    position:absolute;
-    display:flex;
-    flex-direction:column;
-    top:55%;
-    left:50%;
-    transform:translate(-50% , -50%);
-  width:100% ;
-  }
+  .hero-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    overflow: hidden; /* Add this line to hide the text initially */
+}
+
   .hero-text h1{
     font-size:4rem;
     font-weight:800;
     background:white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
     -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;
   }
@@ -29,10 +42,7 @@
     font-size:2rem;
     font-weight:800;
     background:white;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent;
-  }
-  .hero-text h3{
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); 
     font-size:1rem;
     font-weight:800;
     background:white;
@@ -53,6 +63,7 @@
     letter-spacing: 2px;
     color:blue;
   }
+ 
   @media screen and (max-width:550px){
     .hero-text h1{
       padding:10px 20px;
@@ -72,6 +83,7 @@
       background:white;
     }
   }
+  
   
   
   
