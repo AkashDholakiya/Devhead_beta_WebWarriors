@@ -5,7 +5,7 @@ import Homeabout from '../components/Homeabout';
 import Navbar from "../components/Navbar";
 
 function Home(props){
-
+  const tag = localStorage.getItem('token') ? "Go to Dashboard" : "Join Us";
   return(
     <>
     <Navbar showAlert={props.showAlert}/>
@@ -15,13 +15,13 @@ function Home(props){
     title="BUILD UP YOUR"
     text="STRENGTH"
     text2="Build Your Body and Fitness with Proffesional Touch"
-    buttonText={`${localStorage.getItem('token') ? 'Go to Classes' : 'Join Us'}`}
+    buttonText={tag}
     url ="/Signup"
     btnClass="show"
     />
     <Homeabout/>
-  
     <Footer/>
+    {localStorage.getItem('token') && <zapier-interfaces-page-embed page-id='clnap55n3162340omhct3bh3h7' no-background='false' style={{width: "100%", height: "500px"}} />}
     </>
   );
 }

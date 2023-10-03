@@ -29,10 +29,6 @@ function Classes(){
     const [bodyPart,setBodyPart] = useState('all');  
     const [bodyParts,setBodyParts] = useState([]);
 
-
-    const [currentpage,setcurrentpage] = useState(1);
-    const [ElePerPage,setElePerPage] = useState(8);
-
     useEffect(() => {
       const fethBodyPart = async () => {
         // cosnt bodyPartData = await fetchData("https://exercisedb.p.rapidapi.com/bodyparts",exerciseOptions); 
@@ -40,7 +36,7 @@ function Classes(){
         setBodyParts(['all', ...bodyPartData]);
       }
       let randomData = Data1.sort(() => Math.random() - 0.5);
-      setExercise(randomData.slice(0, 100));
+      setExercise(randomData.slice(0, 48));
       fethBodyPart();
     },[])
 
@@ -62,9 +58,8 @@ function Classes(){
         setExercise(searchedExercise);
       }
     }
-    const indexofLastEle = currentpage * ElePerPage;
-    const indexofFirstEle = indexofLastEle - ElePerPage; 
-    const currentEle = exercise.slice(indexofFirstEle,indexofLastEle); 
+
+
     return(
       <div className="clink">
         {scroll && <i onClick={scrollup} className={`scroller fade-in-scroller fa-solid fa-arrow-up`}></i>}
@@ -76,9 +71,9 @@ function Classes(){
             <input className="finput" type="text" value={search} onChange={(e) => setSearch(e.target.value.toLowerCase())} placeholder="Search Exercises here" aria-label="Search" />
             <button className="btn btn-outline-primary" onClick={handle}>Search</button>
           </div>
-
+          <p style={{textAlign:'center',fontSize:'20px'}}> Select the options from the below Horizontalbar to check it's corresponding exercises as per your wish or you can search on the above searching bar</p>
           <Horizontalbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
-          <Exercises exercise={currentEle} setExercise={setExercise} bodyPart={bodyPart}/>
+          <Exercises exercise={exercise} setExercise={setExercise} bodyPart={bodyPart}/>
       </div>
     )
   }

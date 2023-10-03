@@ -27,6 +27,7 @@
 .form-section{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .finput{
     width: 750px;
@@ -63,6 +64,7 @@
 }
 .scrollItem:hover{
     box-shadow: 0px 0px 20px white;
+    transition: all 0.4s;
 }
 
 .mexer{
@@ -113,7 +115,7 @@
   .scroller{
     position: fixed;
     right : 13px;
-    bottom: 15px; 
+    bottom: 40px; 
     color:white;
     font-size: 30px;
     cursor: pointer;

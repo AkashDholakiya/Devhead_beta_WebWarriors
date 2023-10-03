@@ -13,7 +13,6 @@ const ExerciseCard = ({exercise}) => {
                 <button className='btn btn-outline-primary'>{exercise.target}</button>
             </div>
         </div>
-      
     </Link>
   )
 }
