@@ -26,7 +26,7 @@ const register = async (req, res) => {
         }
         const token = jwt.sign(data, process.env.JWT_SECRET || JWT_SECRET,{expiresIn:"15d"});
 
-        res.status(200).json({success:true,token, message:"User has been registered successfully"});
+        res.status(200).json({success:true,token,username:req.body.username, message:"User has been registered successfully"});
 
     } catch (error) {
         res.status(500).json({success:false, message:"Internal server error",error:error.message});

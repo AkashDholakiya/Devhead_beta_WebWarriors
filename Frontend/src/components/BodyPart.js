@@ -1,7 +1,8 @@
 import React from 'react'
 import Icon from '../components/images/gymicon.png'
+// import { useState } from 'react'
 
-const BodyPart = ({item,BodyPart,setBodyPart}) => {
+const BodyPart = ({item,bodyPart,setBodyPart}) => {
 
   return (
     <div>
@@ -12,12 +13,14 @@ const BodyPart = ({item,BodyPart,setBodyPart}) => {
         height:'280px',
         cursor:'pointer',
         gap:'47px'
-      }}>
+      }}
+      onClick={() => setBodyPart(item)}
+      >
         <img src={Icon} alt="GymIcon" style={{width:'80px', height:'80px',margin:'40px 40px'}}/>
         <p>{item}</p>
         </div>  
     </div>
   )
 }
-
+         
 export default BodyPart

@@ -2,13 +2,13 @@ import React from 'react'
 import BodyPart from '../components/BodyPart'
 
 
-const horizontalbar = (props) => {
+const horizontalbar = ({data,setBodyPart,bodyPart}) => {
   return (
     <div className='makehorizontal'>
-        {props.data.map((item) => (
-            <section key={item || item.id}  title={item || item.id} itemID={item || item.id} ><BodyPart item={item} bodyPart={props.BodyPart} setBodyPart={props.setBodyPart}/></section>
+        {data.map((item) => (
+            <section key={item || item.id}  title={item || item.id} itemID={item || item.id} ><BodyPart item={item} bodyPart={bodyPart} setBodyPart={setBodyPart}/></section>
         ))}
-    </div>
+    </div> 
   )
 }
 

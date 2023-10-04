@@ -19,6 +19,7 @@ const Register = (props) => {
         console.log(json);
         if(json.success){
             localStorage.setItem('token',json.token)
+            localStorage.setItem('username',json.username)
             props.showAlert("Signup Successful","success")
             navigate('/')
         }else{

@@ -15,7 +15,7 @@ export const MenuItems =[
       title : "Classes",
       url : "/classes",
       cName : "nav-links",
-      
+      icon : "fa-solid fa-dumbbell"
     },
     {
       title : "Contact",

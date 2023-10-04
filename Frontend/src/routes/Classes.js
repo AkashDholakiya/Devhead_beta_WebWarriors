@@ -9,6 +9,13 @@ import Data2 from "./Data2";
 
 function Classes(){
   const [scroll, setScroll] = useState(false);
+  const [load, setLoad] = useState(false);
+  const [search,setSearch] = useState("");
+  const [exercise,setExercise] = useState([]);
+  const [bodyPart,setBodyPart] = useState('all');  
+  const [bodyParts,setBodyParts] = useState([]);
+
+
   const scrollup = () => {
     window.scrollTo({
       top: 0,
@@ -24,27 +31,25 @@ function Classes(){
     }
     })
 
-    const [search,setSearch] = useState("");
-    const [exercise,setExercise] = useState([]);
-    const [bodyPart,setBodyPart] = useState('all');  
-    const [bodyParts,setBodyParts] = useState([]);
 
     useEffect(() => {
-      const fethBodyPart = async () => {
-        // cosnt bodyPartData = await fetchData("https://exercisedb.p.rapidapi.com/bodyparts",exerciseOptions); 
+      const fetchBodyParts = async () => {
+        // const bodyPartData = await fetchData("https://exercisedb.p.rapidapi.com/exercises/bodyPartList",exerciseOptions); 
+        setLoad(true);
         const bodyPartData = Data2;  
         setBodyParts(['all', ...bodyPartData]);
-      }
+        setLoad(false);
+      } 
       let randomData = Data1.sort(() => Math.random() - 0.5);
       setExercise(randomData.slice(0, 48));
-      fethBodyPart();
+      fetchBodyParts();
     },[])
 
     const handle = async () => {
       if(search){
-        // const exereciseData  = await fetchData("https://exercisedb.p.rapidapi.com/exercises?limit=100",exerciseOptions);
+        setLoad(true);
+        // const exereciseData  = await fetchData("https://exercisedb.p.rapidapi.com/exercises?limit=10000",exerciseOptions);
         const exereciseData = Data1;
-        console.log(exereciseData);
 
         const searchedExercise = exereciseData.filter(
           (item) => item.name.toLowerCase().includes(search)
@@ -52,10 +57,10 @@ function Classes(){
           || item.equipment.toLowerCase().includes(search)
           || item.bodyPart.toLowerCase().includes(search),
           )
-          
-        // console.log(searchedExercise);
+          window.scrollTo({ top: 1050, left: 100, behavior: 'smooth' });
         setSearch("");
         setExercise(searchedExercise);
+        setLoad(false);
       }
     }
 
@@ -72,8 +77,9 @@ function Classes(){
             <button className="btn btn-outline-primary" onClick={handle}>Search</button>
           </div>
           <p style={{textAlign:'center',fontSize:'20px'}}> Select the options from the below Horizontalbar to check it's corresponding exercises as per your wish or you can search on the above searching bar</p>
-          <Horizontalbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart}/>
-          <Exercises exercise={exercise} setExercise={setExercise} bodyPart={bodyPart}/>
+          <Horizontalbar data={bodyParts} setBodyPart={setBodyPart} bodyPart={bodyPart}/>
+          {console.log(bodyPart)}
+          <Exercises exercise={exercise} setExercise={setExercise} bodyPart={bodyPart} loading={load}/>
       </div>
     )
   }
