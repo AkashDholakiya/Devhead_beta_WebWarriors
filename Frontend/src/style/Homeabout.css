@@ -38,8 +38,6 @@
 }
 .image{
     position:relative;
-    border:  0.5rem solid black;
-    border-radius: 50% ;
     width:50%;
     display:flex;
 }

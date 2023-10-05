@@ -64,15 +64,49 @@ const Login = async (req,res) => {
         res.status(500).json({success:false, message:"Failed To login",error:error.message});
     }
 } 
- 
+
+const EditUser = async (req,res) => {
+    try {
+        const {username,email,password} = req.body;
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+        const user = await User.findByIdAndUpdate(req.params.id,{
+            username:username,
+            email:email,
+            password:hashedPassword
+        },{new:true});
+        if(!user){
+            return res.status(404).json({success:false, message:"User not found"});
+        }
+        res.status(200).json({success:true, message:"User has been updated successfully",data:user});
+    } catch (error) {
+        res.status(500).json({success:false, message:"Failed To update",error:error.message});
+    }
+}
+
+const DeleteUser = async (req,res) => {
+    try {
+        const user = await User.findByIdAndDelete(req.params.id);
+        if(!user){
+            return res.status(404).json({success:false, message:"User not found"});
+        }
+        res.status(200).json({success:true, message:"User has been deleted successfully",data:user});
+    } catch (error) {
+        res.status(500).json({success:false, message:"Failed To delete",error:error.message});
+    }
+}
+
 const getuser = async (req,res) => {
     try {
-        userId = req.body.id;
-        const user = await User.findById(userId).select("-password")
-        res.send(user)
-      } catch (error) {
-        console.error(err.message);
-        res.status(500).send("error occured");  
-      }
-}  
-module.exports = { register,Login,getuser}; 
+        const user = await User.findById(req.params.id);
+        if(!user){
+            return res.status(404).json({success:false, message:"User not found"});
+        }
+        res.status(200).json({success:true, message:"User has been fetched successfully",data:user});
+    } catch (error) {
+        res.status(500).json({success:false, message:"Failed To fetch",error:error.message});
+    }
+}
+
+
+module.exports = { register,Login,getuser,EditUser,DeleteUser}; 

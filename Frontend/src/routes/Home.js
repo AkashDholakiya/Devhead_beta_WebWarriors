@@ -4,8 +4,7 @@ import Homeabout from '../components/Homeabout';
 import Navbar from "../components/Navbar";
 
 function Home(props){
-  const tag = localStorage.getItem('token') ? "Go to Dashboard" : "Join Us";
-  console.log(tag);
+
   return(
     <>
     <Navbar showAlert={props.showAlert}/>
@@ -15,10 +14,13 @@ function Home(props){
     title="BUILD UP YOUR"
     text="STRENGTH"
     text2="Build Your Body and Fitness with Proffesional Touch"
-    buttonText={tag}
+    buttonText="Join Us"
     url ="/Signup"
     btnClass="show"
+    setter={props.setter}
+    botvisible={props.botvisible}
     />
+    {props.setProgress(100)}
     <Homeabout/>
     <Footer/>
 

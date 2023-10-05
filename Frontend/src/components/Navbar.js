@@ -16,9 +16,10 @@ const  Navbar = (props) => {
   const Logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
+    document.getElementById('2').style.display = localStorage.getItem('token') ? 'block' : 'none';
     props.showAlert("Logged out Successfully","success")
     setIsLoggedin(false);
-    navigate('/Login');
+    navigate('/');
   }
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -50,7 +51,7 @@ const  Navbar = (props) => {
          {isLoggedin && <div className="dropdown">
           <Link className="nav-links" data-bs-toggle="dropdown" aria-expanded="false"><i className="fas fa-user"></i>{localStorage.getItem('username')}</Link>
           <ul className="dropdown-menu dropd">
-            <li><Link className="dropdown-item dropd-item" to="">Profile</Link></li>
+            <li><Link className="dropdown-item dropd-item" to="#">Profile</Link></li>
             <li><Link className="dropdown-item dropd-item" to="#">Favourite Excercises</Link></li>
             <li><Link className="dropdown-item dropd-item" onClick={Logout} >Logout</Link> </li>
           </ul>

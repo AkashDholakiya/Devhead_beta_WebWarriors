@@ -3,7 +3,7 @@
     display: none;
 }
 .clink{
-    background-color: black;
+    background: black;
     color: white;
     font-weight: bold;
     overflow: hidden;
@@ -79,7 +79,11 @@
     margin: 20px 40px;
     text-align: center;
     justify-content: center;
+    border-radius: 40px;
     height: 500px;
+}
+.card-img-top{
+    border-radius: 40px;
 }
 
 .fade-in-text{
@@ -121,3 +125,5 @@
     font-size: 30px;
     cursor: pointer;
   }
+
+

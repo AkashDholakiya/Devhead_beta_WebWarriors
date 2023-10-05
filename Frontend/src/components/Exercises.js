@@ -14,7 +14,6 @@ const Exercises = ({exercise,setExercise,bodyPart,loading}) => {
         ExerciseData = Data1.filter((item) => item.bodyPart === bodyPart);
       }
       setExercise(ExerciseData)
-      console.log(ExerciseData);
     }
     window.scrollTo({ top: 1050, left: 100, behavior: 'smooth' });
     fetchExercise();

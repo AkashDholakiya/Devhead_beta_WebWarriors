@@ -3,9 +3,10 @@ import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 
-function Contact(){
+function Contact(props){
   return(
     <>
+    {props.setProgress(0)}
     <Navbar/>
     <Hero 
     cName="hero-mid"
@@ -15,6 +16,7 @@ function Contact(){
     />
     <ContactForm/>
      <Footer/>
+     {props.setProgress(100)}
     </>
   )
 }

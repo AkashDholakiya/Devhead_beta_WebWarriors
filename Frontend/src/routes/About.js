@@ -4,9 +4,10 @@ import Footer from "../components/Footer";
 import   AboutUs from "../components/AboutUs";
 import  "../style/HeroStyles.css";
 
-function About(){
+function About(props){
     return(
     <>
+    {props.setProgress(0)}
     <Navbar/>
     <Hero 
     cName="hero-mid"
@@ -16,6 +17,7 @@ function About(){
     />
     <AboutUs/>
     <Footer/>
+    {props.setProgress(100)}
     </>
   )
 }

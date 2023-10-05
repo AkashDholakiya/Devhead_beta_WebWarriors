@@ -8,6 +8,7 @@ const Register = (props) => {
     const [val,setVal] = useState({username : '',email : '',password : ''});
     const handleSubmit = async (e) => {
         e.preventDefault();
+        props.setProgress(50)
         const response = await fetch('http://localhost:4000/api/v1/auth/register',{
             method:'POST',
             headers:{
@@ -15,6 +16,7 @@ const Register = (props) => {
             }, 
             body:JSON.stringify(val)
         }) 
+        props.setProgress(100)
         const json = await response.json();
         console.log(json);
         if(json.success){

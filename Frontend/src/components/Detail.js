@@ -1,52 +1,24 @@
 import React from 'react';
-
-// import BodyPartImage from '../assets/icons/body-part.png';
-// import TargetImage from '../assets/icons/target.png';
-// import EquipmentImage from '../assets/icons/equipment.png';
+import "../style/Exerdetail.css"
 
 const Detail = ({ exerciseDetail }) => {
-  const { bodyPart, gifUrl, name, target } = exerciseDetail;
-
-//   const extraDetail = [
-//     {
-//       icon: BodyPartImage,
-//       name: bodyPart,
-//     },
-//     {
-//       icon: TargetImage,
-//       name: target,
-//     },
-//     {
-//       icon: EquipmentImage,
-//       name: equipment,
-//     },
-//   ];
+  const { bodyPart,instructions, gifUrl, name, target } = exerciseDetail;
 
   return (
-    <div >
-      <img src={gifUrl} alt={name} loading="lazy" style={{width:"200px",height:"200px"}}/>
-      <div >
-        <section style={{fontWeight:"700",textTransform:"capitalize"}}>
-          {name}
+    <div className='mainDetail'>
+      <h1 style={{fontFamily:"fantasy",letterSpacing:"0.11rem"}}>Exercise Detail</h1>
+    <div className='detailclass'>
+      <img src={gifUrl} alt={name} loading="lazy" style={{borderRadius:"40px",width:"450px",height:"450px",marginRight:"200px"}}/>
+      <div className='flexydetail'>
+          <h1 className='flexydetail'>BodyPart : {bodyPart}</h1>
+        <section className='flexydetail'>
+          <h3>Exercise Name : {name}</h3>
         </section>
-        <section style={{ fontSize: "20px", color:"#4F4C4C"}}>
-          Exercises keep you strong.{' '}
-          <span style={{ textTransform: 'capitalize' }}>{name}</span> bup is one
-          of the best <br /> exercises to target your {target}. It will help you improve your{' '}
-          <br /> mood and gain energy.
-        </section>
-        {/* {extraDetail?.map((item) => (
-          <div key={item.name} direction="row" gap="24px" alignItems="center">
-            <button sx={{ background: '#FFF2DB', borderRadius: '50%', width: '100px', height: '100px' }}>
-              <img src={item.icon} alt={bodyPart} style={{ width: '50px', height: '50px' }} />
-            </button>
-            <section textTransform="capitalize" sx={{ fontSize: { lg: '30px', xs: '20px' } }}>
-              {item.name}
-            </section>
-          </div>
-        ))} */}
+          <p>&rarr; {instructions}</p>
+          <p>&rarr; Exercises keep you strong.{' '} {name} bup is one of the best exercises to target your {target}. It will help you improve your{' '} mood and gain energy.</p>
       </div>
     </div>
+  </div>
   );
 };
 
