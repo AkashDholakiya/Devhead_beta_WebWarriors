@@ -20,7 +20,7 @@ Welcome to FitPal, your all-in-one fitness companion! FitPal is a dynamic fitnes
   
 
 ## Demo 📺
-![ FitPal Video]
+![https://drive.google.com/file/d/11LFOzEVlAf_XwpcQx5Bvxagc4t8K0MG2/view?usp=sharing]
 
 
 ## Getting Started 🚀
