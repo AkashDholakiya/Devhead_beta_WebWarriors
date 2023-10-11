@@ -1,6 +1,6 @@
 # FitPal⛹
 
-**FitPal**: Your Ultimate Fitness Website Built with ReactJS 💪
+**FitPal**: Your Ultimate Fitness Website Built with MERN Stack 💪
 
 ![FitPal Demo](https://github.com/AkashDholakiya/Devheat_beta_WebWarriors/assets/129520182/fc5e2e5c-9e7e-4033-95a6-c60655549355)
 
@@ -27,13 +27,21 @@ Welcome to FitPal, your all-in-one fitness companion! FitPal is a dynamic fitnes
 
 To get started with FitPal on your local machine, follow these steps:
 
+## API USED
+
+we have used Exercise DB api from Rapid API which helps a lot to provide the exercise GIFs, Exercise Name as well as for which body part it is for.
+Here is the Link for that API 
+<a href="https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/">Exercise DB</a>
+
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/AkashDholakiya/Devheat_beta_WebWarriors
    cd Devheat_beta_WebWarriors
-   npm install
-   npm start
+   cd Frontend
+   npm init
+   cd ../Backend
+   npm init
    ```
 
 ## Usage 💡
