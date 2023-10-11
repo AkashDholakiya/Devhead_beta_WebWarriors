@@ -23,15 +23,14 @@ Welcome to FitPal, your all-in-one fitness companion! FitPal is a dynamic fitnes
 ![https://drive.google.com/file/d/11LFOzEVlAf_XwpcQx5Bvxagc4t8K0MG2/view?usp=sharing]
 
 
-## Getting Started 🚀
-
-To get started with FitPal on your local machine, follow these steps:
-
 ## API USED
 
 we have used Exercise DB api from Rapid API which helps a lot to provide the exercise GIFs, Exercise Name as well as for which body part it is for.
 Here is the Link for that API 
 <a href="https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/">Exercise DB</a>
+
+## Getting Started 🚀
+To get started with FitPal on your local machine, follow these steps:
 
 1. Clone the repository:
 
